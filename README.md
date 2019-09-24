@@ -15,6 +15,11 @@ The custom card is inserted into a lovelace view. When the view, and the locatio
 
 The device location is compared to all zones compared to Hassio. If the current location is within the radius of any location, it sets the zone name as the state of the device. If multiple zones fulfill this condition, then the one which is closest (least distance) is chosen. Given GPS and formula accuracy, it would be recommended to set a zone radius of at least 150-200 meters.
 
+## Why This Card Exists
+Home-Assitant allows a few ways to do [location tracking](https://www.home-assistant.io/components/device_tracker/). The ones using Router and similar connections are only capable of detecting whether you are home, but not whether you are at certain locations. The other ones requires a system (usually MQTT) to process the geolocation information.
+
+I wanted a native way to do this without more devices/systems than my phone. Hence, I tried to leverage the best of the web/HTML5 to see if I could create a system to leverage browser APIs to track location efortlessly. This is an experiment, which mostly works. While tracking location was easy, updating this location without being active on the browser is not currently possible.
+
 ## Installation
 
 1. Copy the file `location-tracker.js` on this repository onto `config/www/custom-lovelace/location-tracker/location-tracker.js`.
